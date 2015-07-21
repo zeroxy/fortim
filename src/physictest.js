@@ -134,7 +134,7 @@ var PhyTestLayer = cc.Layer.extend({
             var distance = Math.abs((size.height / 7 *2) - myBody.p.y);
             if(distance<50) {
               score +=1;
-              if(score>9){
+              if(score>7){
                 cc.director.pause();
                 that.addChild(new GameEndingLayer());
               }
