@@ -10,7 +10,7 @@ var GameEndingLayer = cc.LayerColor.extend({
     var winSize = cc.director.getWinSize();
     var centerPos = cc.p(winSize.width/2, winSize.height/2);
     
-    var nameLabel = new cc.LabelTTF("티파니", "Impact", 38);
+    var nameLabel = new cc.LabelTTF("티파니(김윤영)", "Impact", 38);
     nameLabel.setPosition(winSize.width / 2, winSize.height/2 + 95);
     this.addChild(nameLabel, 5);
     
