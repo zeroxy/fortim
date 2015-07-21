@@ -48,6 +48,8 @@ var GameOverLayer = cc.LayerColor.extend({
   },
   onRestart:function(sender){
     cc.director.resume();
+    score=0;
+    life=3;
     cc.director.runScene( new PhyTestScene() );
   }
 });
