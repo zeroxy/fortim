@@ -26,6 +26,9 @@ var MyLayer = cc.Layer.extend({
     this.helloLabel = new cc.LabelTTF("부케를 던져라!", "Impact", 38);
     this.helloLabel.setPosition(size.width / 2, size.height /2  + 40);
     this.addChild(this.helloLabel, 5);
+ var ruleLabel = new cc.LabelTTF("부케가 네모안에 들어올때 터치!", "Impact", 20);
+    ruleLabel.setPosition(size.width / 2, size.height /2);
+    this.addChild(ruleLabel, 5);
 
     // this.sprite = new cc.Sprite(s_HelloWorld);
     // this.sprite.setAnchorPoint(0.5, 0.5);
