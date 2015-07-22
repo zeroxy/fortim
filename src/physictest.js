@@ -6,25 +6,25 @@ var GameEndingLayer = cc.LayerColor.extend({
     this.init();
   },
   init: function(){
-    this._super(cc.color(0,0,0,100));
+     this._super(cc.color(0,0,0,100));
     var winSize = cc.director.getWinSize();
     var centerPos = cc.p(winSize.width/2, winSize.height/2);
     
-    var nameLabel = new cc.LabelTTF("티파니(김윤영)", "Impact", 38);
+    var nameLabel = new cc.LabelTTF("팀(김응규) 결혼축하!", "Impact", 38);
     nameLabel.setPosition(winSize.width / 2, winSize.height/2 + 95);
-    this.addChild(nameLabel, 105);
+    this.addChild(nameLabel, 5);
     
-    var endingLabel = new cc.LabelTTF("결축!", "Impact", 38);
+    var endingLabel = new cc.LabelTTF("상일동", "Impact", 38);
     endingLabel.setPosition(winSize.width / 2, winSize.height/2 + 40);
-    this.addChild(endingLabel, 105);
+    this.addChild(endingLabel, 5);
     
-    var endingLabel2 = new cc.LabelTTF("삼성전자 서초사옥", "Impact", 38);
+    var endingLabel2 = new cc.LabelTTF("삼성엔지니어링사옥", "Impact", 32);
     endingLabel2.setPosition(winSize.width / 2, winSize.height/2 - 5);
-    this.addChild(endingLabel2, 105);
+    this.addChild(endingLabel2, 5);
     
-    var endingLabel3 = new cc.LabelTTF("15년 7월 25일 토 오후5시", "Impact", 30);
+    var endingLabel3 = new cc.LabelTTF("15년 8월 1일 토 오후3시", "Impact", 30);
     endingLabel3.setPosition(winSize.width / 2, winSize.height/2 - 50);
-    this.addChild(endingLabel3, 105);
+    this.addChild(endingLabel3, 5);
   }
 });
 
