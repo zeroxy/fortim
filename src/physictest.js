@@ -111,6 +111,13 @@ var PhyTestLayer = cc.Layer.extend({
     this.addChild(circle,90);
     
     
+    var gamebg = new cc.Sprite(bg);
+    gamebg.setAnchorPoint(0.5, 0.5);
+    gamebg.setPosition(size.width/2, size.height /2+150);
+    gamebg.setScale(1.3);
+    this.addChild(gamebg,-400);
+    
+    
     var target = new cc.Sprite(target_png);  // shadow img of buque
     target.setAnchorPoint(0.5, 0.5);
     target.setPosition(size.width/2, size.height /7 *2);
