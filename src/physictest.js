@@ -10,12 +10,12 @@ var GameEndingLayer = cc.LayerColor.extend({
     var winSize = cc.director.getWinSize();
     var centerPos = cc.p(winSize.width/2, winSize.height/2);
     
-    var nameLabel = new cc.LabelTTF("팀(김응규) 결혼축하!", "Impact", 38);
+    var nameLabel = new cc.LabelTTF("팀(김응규) 결혼축하!", "Impact", 34);
     nameLabel.setPosition(winSize.width / 2, winSize.height/2 + 95);
     this.addChild(nameLabel, 5);
     
     var endingLabel = new cc.LabelTTF("상일동", "Impact", 38);
-    endingLabel.setPosition(winSize.width / 2, winSize.height/2 + 40);
+    endingLabel.setPosition(winSize.width / 2, winSize.height/2 + 32);
     this.addChild(endingLabel, 5);
     
     var endingLabel2 = new cc.LabelTTF("삼성엔지니어링사옥", "Impact", 32);
