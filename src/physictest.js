@@ -12,19 +12,19 @@ var GameEndingLayer = cc.LayerColor.extend({
     
     var nameLabel = new cc.LabelTTF("티파니(김윤영)", "Impact", 38);
     nameLabel.setPosition(winSize.width / 2, winSize.height/2 + 95);
-    this.addChild(nameLabel, 5);
+    this.addChild(nameLabel, 105);
     
     var endingLabel = new cc.LabelTTF("결축!", "Impact", 38);
     endingLabel.setPosition(winSize.width / 2, winSize.height/2 + 40);
-    this.addChild(endingLabel, 5);
+    this.addChild(endingLabel, 105);
     
     var endingLabel2 = new cc.LabelTTF("삼성전자 서초사옥", "Impact", 38);
     endingLabel2.setPosition(winSize.width / 2, winSize.height/2 - 5);
-    this.addChild(endingLabel2, 5);
+    this.addChild(endingLabel2, 105);
     
     var endingLabel3 = new cc.LabelTTF("15년 7월 25일 토 오후5시", "Impact", 30);
     endingLabel3.setPosition(winSize.width / 2, winSize.height/2 - 50);
-    this.addChild(endingLabel3, 5);
+    this.addChild(endingLabel3, 105);
   }
 });
 
@@ -34,7 +34,7 @@ var GameOverLayer = cc.LayerColor.extend({
     this.init();
   },
   init: function(){
-    this._super(cc.color(0,0,0,100));
+    this._super(cc.color(100,0,0,100));
     var winSize = cc.director.getWinSize();
     var centerPos = cc.p(winSize.width/2, winSize.height/2);
     cc.MenuItemFont.setFontSize(30);
@@ -44,7 +44,7 @@ var GameOverLayer = cc.LayerColor.extend({
       this.onRestart,this);
     var menu = new cc.Menu(menuItemRestart);
     menu.setPosition(centerPos);
-    this.addChild(menu);
+    this.addChild(menu,105);
   },
   onRestart:function(sender){
     cc.director.resume();
@@ -108,19 +108,41 @@ var PhyTestLayer = cc.Layer.extend({
     
     circle.setBody(myBody);
     
-    this.addChild(circle);
+    this.addChild(circle,90);
     
     
     var target = new cc.Sprite(target_png);  // shadow img of buque
     target.setAnchorPoint(0.5, 0.5);
     target.setPosition(size.width/2, size.height /7 *2);
     //target.setScale(0.5);
-    this.addChild(target,-10);
+    this.addChild(target,80);
     
     this.helloLabel = new cc.LabelTTF("Score "+score+" Life "+life, "Impact", 38);
     this.helloLabel.setPosition(size.width / 2, size.height - 40);
     this.addChild(this.helloLabel, 5);
 
+    
+    
+    var childrens1=[];
+    var childrens2=[];
+    for(var i = 0; i<30 ; i ++){
+      var sprite_action1 = cc.MoveBy.create(20,cc.p(-3000,0));
+      childrens1[i] = new cc.Sprite(bgbg);
+      childrens1[i].setAnchorPoint(0,0);
+      childrens1[i].setPosition(100*i,100);
+      childrens1[i].setScale(0.1);
+      childrens1[i].runAction(sprite_action1);
+      this.addChild(childrens1[i],-50);
+    }
+    for(var i = 0; i<40 ; i ++){
+      var sprite_action2 = cc.MoveBy.create(20,cc.p(-2100,0));
+      childrens2[i] = new cc.Sprite(bgbg);
+      childrens2[i].setAnchorPoint(0,0);
+      childrens2[i].setPosition(75*i,190);
+      childrens2[i].setScale(0.07);
+      childrens2[i].runAction(sprite_action2);
+      this.addChild(childrens2[i],-88);
+    }
     //var debugNode = new cc.PhysicsDebugNode(this.space);
     //debugNode.visible = true;
     //this.addChild(debugNode);
@@ -136,13 +158,13 @@ var PhyTestLayer = cc.Layer.extend({
               score +=1;
               if(score>7){
                 cc.director.pause();
-                that.addChild(new GameEndingLayer());
+                that.addChild(new GameEndingLayer(),100);
               }
             } else {
               life-=1;
               if(life<1){
                 cc.director.pause();
-                that.addChild(new GameOverLayer());
+                that.addChild(new GameOverLayer(),99);//GameOverLayer
               }
             }
             myBody.vy*=-1;
